@@ -6,8 +6,6 @@ const sequelize = require("./util/database");
 const authRoutes = require("./routes/auth");
 const usersRoutes = require("./routes/users");
 
-//const NotifyRoutes = require("./routes/notify");
-
 const app = express();
 
 //app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 /* Add new routes here ... */
-app.use("/auth", authRoutes);
+app.use("/users", authRoutes);
 
 app.use("/user", usersRoutes);
 

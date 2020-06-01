@@ -41,13 +41,17 @@ exports.login = (req, res, next) => {
   const _email = req.body.email;
   const _password = req.body.password;
 
+  console.log(req.body);
   let loadedUser;
   User.findOne({ where: { email: _email } })
     .then((user) => {
       if (!user) {
-        const error = new Error("A user with this email could not be found.");
-        error.statusCode = 401;
-        throw error;
+        // const error = new Error("A user with this email could not be found.");
+        // error.statusCode = 401;
+        // throw error;
+        res
+          .status(401)
+          .json({ message: "A user with this email could not be found." });
       }
       loadedUser = user;
       return bcrypt.compare(_password, user.password);
