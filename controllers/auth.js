@@ -41,7 +41,7 @@ exports.login = (req, res, next) => {
   const _email = req.body.email;
   const _password = req.body.password;
 
-  console.log(req.body);
+  //console.log(req.body);
   let loadedUser;
   User.findOne({ where: { email: _email } })
     .then((user) => {

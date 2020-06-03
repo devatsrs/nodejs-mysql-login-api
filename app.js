@@ -5,6 +5,7 @@ const sequelize = require("./util/database");
 
 const authRoutes = require("./routes/auth");
 const usersRoutes = require("./routes/users");
+const todoRoutes = require("./routes/todos");
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use((req, res, next) => {
 app.use("/users", authRoutes);
 
 app.use("/user", usersRoutes);
+
+app.use("/todos", todoRoutes);
 
 app.use(errorController.get404);
 
