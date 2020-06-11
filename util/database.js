@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("react_login", "root", "root", {
+const sequelize = new Sequelize("task_manager_react", "root", "root", {
   dialect: "mysql",
   host: "localhost",
 });
