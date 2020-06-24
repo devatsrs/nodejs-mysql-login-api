@@ -8,22 +8,27 @@ module.exports = sequelize.define("users", {
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
-    field: "id",
+    field: "id"
   },
-  name: {
+  first_name: {
     type: Sequelize.STRING(255),
     allowNull: true,
-    field: "name",
+    field: "first_name"
+  },
+  last_name: {
+    type: Sequelize.STRING(255),
+    allowNull: true,
+    field: "last_name"
   },
   email: {
     type: Sequelize.STRING(255),
     allowNull: true,
     unique: true,
-    field: "email",
+    field: "email"
   },
   password: {
     type: Sequelize.STRING(255),
     allowNull: true,
-    field: "password",
-  },
+    field: "password"
+  }
 });
